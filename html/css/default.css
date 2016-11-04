@@ -1,0 +1,187 @@
+@IMPORT url("/css/icomoon.css");
+
+@font-face {
+     font-family: 'Arial Black';
+     src: url('/fonts/arialblk.ttf') format('truetype');
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#topo {
+	/* border: solid 1px black; */
+	height: 92px;
+	background-image: url("/images/bgtopo.png");
+	background-repeat: repeat-x;
+	color: #FFFFFF;
+}
+
+#topo img {
+	padding-top: 6px;
+}
+
+#box img {
+	position: absolute;
+	top: 60px;
+	left: 330px;
+}
+
+.headerspan {
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	font-family: Arial;
+	font-weight: bold;
+	position: relative;
+	color: #FFFFFF;
+}
+
+#sefa {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	/* border: 1px solid #000; */
+	font-size: 44px;
+	font-family: 'Arial Black', 'Arial Bold', Arial, Gadget, sans-serif;
+	font-weight: normal;
+}
+
+#ares {
+	position: absolute;
+	top: 65px;
+	left: 0px;
+	font-size: 18px;
+	width: 300px;
+	/* border: 1px solid #000; */
+}
+
+#titles, #icon {
+	/* border: 1px solid #000; */
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+
+#box {
+	/* border: 1px solid #000; */
+	width: 35%;
+	height: 150px;
+	position: relative;
+	display: block;
+	margin: 0px;
+	left: 30%;
+}
+
+#loginbox {
+	/* border: 1px solid #000; */
+	width: 55%;
+	position: relative;
+	display: block;
+	margin: 0px;
+	left: 23%;
+}
+
+#loginbox .alert {
+	width: 55%;
+	position: relative;
+	display: block;
+	margin: 0px;
+	left: 22.7%;
+}
+
+#feedback {
+	/* border: 1px solid #000; */
+	position: relative;
+	width: 35%;
+	margin: 0px;
+	left: 30%;
+}
+
+#rules {
+	/* border: 1px solid #000; */
+	position: relative;
+	width: 35%;
+	margin: 0px;
+	left: 30%;
+}
+
+#feedback p {
+	text-align: center;
+	font-family: Arial;
+}
+
+.error {
+	color: red;
+}
+
+.info {
+	color: #999999;
+}
+
+.succes {
+	color: #4caf50;
+	font-weight: bold;
+}
+
+#version {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	right: 2px;
+	color: #636161;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12px;
+	float: right;
+}
+
+#box label {
+        color: #636161;
+        font-family: Verdana;
+        font-weight: bold;
+        font-size: 12px;
+}
+
+#box input {
+	background-color: #c1c1c1;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+#box label.lChave {
+	position: absolute;
+	left: 10px;
+	top: 35px;
+}
+
+#box label.lCode {
+	position: absolute;
+	left: 10px;
+	top: 65px;
+}
+
+#box input.file {
+	position: absolute;
+	left: 150px;
+	top: 30px;
+}
+
+#box input.code {
+	position: absolute;
+	left: 150px;
+	top: 60px;
+}
+
+#box input.auth {
+	position: absolute;
+	padding:3px;
+	margin:0px;
+	text-align:left;
+	width: 6em;
+	left: 150px;
+	top: 90px;
+}
