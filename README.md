@@ -9,6 +9,9 @@ Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 * AngularJS 1.5
 * SQLite 3.6
 
+![ARES admin](http://gilab.sefa.pa.gov.br/gitlab/cgre-rede/ares-admin/blob/master/html/images/aresadmin.png)
+Format: ![Alt Text](url)
+
 ### API Python Zabbix
 A funcionalidade de criacao do host no Zabbix exigea instalacao do modulo
 zabbix-api do Python na maquina que esta executando o playboook (desktop do admin):
