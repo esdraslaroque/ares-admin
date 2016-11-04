@@ -9,7 +9,7 @@ Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 * AngularJS 1.5
 * SQLite 3.6
 
-![ARES admin](http://gilab.sefa.pa.gov.br/gitlab/cgre-rede/ares-admin/blob/master/html/images/aresadmin.png)
+![ARES admin](/gitlab/cgre-rede/ares-admin/blob/master/html/images/aresadmin.png)
 Format: ![Alt Text](url)
 
 ### API Python Zabbix
