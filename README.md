@@ -9,8 +9,8 @@ Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 * AngularJS 1.5
 * SQLite 3.6
 
-![ARES admin](/gitlab/cgre-rede/ares-admin/blob/master/html/images/aresadmin.png)
-Format: ![Alt Text](url)
+http://github.com - automatic!
+[GitHub](http://github.com)
 
 ### API Python Zabbix
 A funcionalidade de criacao do host no Zabbix exigea instalacao do modulo
