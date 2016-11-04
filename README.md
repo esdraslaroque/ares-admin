@@ -1,7 +1,7 @@
 # Repositório do Gerenciador Web ARES 
 
 ## Tecnologias utilizadas
-Esta ferramenta foi desenvolvida utilizando as seguintes ferramentas:
+Este projeto foi desenvolvido utilizando as seguintes ferramentas:
 
 * Apache HTTPd 2.2
 * PHP 5.3
