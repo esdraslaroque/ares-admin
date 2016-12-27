@@ -10,6 +10,7 @@
 		<div style="position: relative; margin: 0px; padding: 0px; float: left;">
 			<img src="cid:<?php echo $cid; ?>" height="80px" style="padding-top: 6px;" />
 		</div>
+<!--		
 		<div style="position: relative; margin: 0px; padding: 0px; float: left;">
 			<span style="padding: 0px; margin: 0px; position: absolute; font-family: Arial; font-weight: bold; position: relative; color: #FFFFFF; top: 0px; left: 0px; font-size: 44px; font-family: 'Arial Black', 'Arial Bold', Arial, Gadget, sans-serif; font-weight: normal;">
 				SEFA
@@ -19,6 +20,7 @@
 				Acesso Remoto Seguro
 			</span>
 		</div>
+-->
 	</div>
 	<div style="padding: 10px; border: solid 1px #4b6de1">
 		<br>

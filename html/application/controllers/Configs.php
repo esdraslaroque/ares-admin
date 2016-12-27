@@ -64,7 +64,7 @@ class Configs extends CI_Controller {
 				'mailtype'  => 'html'
 		));
 
-		$img = '/var/www/html/images/icone_v2.png';
+		$img = '/var/www/html/images/icone_email.png';
 		$this->email->attach($img);
 		$cid = $this->email->attachment_cid($img);
 		

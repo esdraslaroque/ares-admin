@@ -54,16 +54,23 @@ class Usuarios extends CI_Controller {
 
 		if ($ok) {
 			$output = file_get_contents('http://127.0.0.1/gpgManage?op=renew&username='. $login .'&valid='. $validade);
-			$this->UsuariosModel->updateAdmin($admin_id, $usuario_id);
-			$this->UsuariosModel->updateProcesso($processo, $usuario_id);
-			$this->UsuariosModel->setAviso($usuario_id, 0);
-			$this->sendmail($login, 2);
-
-			/* Temporario Para periodo de migração do x-oc-ipsec */
-			$this->gera_kit($login);
+			
+			$ret = json_decode($output);
+			
+			if ($ret->id_key == NULL) {
+				$output = '{"cod":1, "msg":"Problema interno no servidor"}';
+				$this->output->set_content_type('application/json')->set_output( $output );
+			} else {
+				$this->UsuariosModel->updateAdmin($admin_id, $usuario_id);
+				$this->UsuariosModel->updateProcesso($processo, $usuario_id);
+				$this->UsuariosModel->setAviso($usuario_id, 0);
+				$this->sendmail($login, 2);
+	
+				/* Temporario Para periodo de migração do x-oc-ipsec */
+				$this->gera_kit($login);
+				$this->output->set_content_type('application/json')->set_output( $output );
+			}
 		} 
-
-		$this->output->set_content_type('application/json')->set_output( $output );
 	}
 
 	public function consulta_chave($login) {
@@ -204,7 +211,7 @@ class Usuarios extends CI_Controller {
 		$pessoa = $this->PessoasModel->getPessoa($login);
 		$nome = explode(' ', $pessoa['nome']);
 		
-		$img = '/var/www/html/images/icone_v2.png';
+		$img = '/var/www/html/images/icone_email.png';
 		$this->email->attach($img);
 		$cid = $this->email->attachment_cid($img);
 		
