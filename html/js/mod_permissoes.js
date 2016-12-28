@@ -180,8 +180,14 @@ app.controller('RegrasCtrl', function($scope, $http, $rootScope, $uibModal, ngTo
 		
 //		var idx = $scope.regras.indexOf(regra);
 		
-		modalInstance.result.then(function(){
-			$scope.carregaRegras();
+		modalInstance.result.then(function(data){
+			if (data.cod == 1) {
+				$scope.carregaRegras();
+				feedback('danger', data.msg);
+			} else {
+				$scope.carregaRegras();
+				feedback('success', 'Regra <b>'+ data.regra_id +'</b> editada!');
+			}
 		});
 	} // editRule
 	
@@ -340,8 +346,8 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 					'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 				}
 			}).
-			success(function(){
-				$uibModalInstance.close($scope.regra);
+			success(function(data){
+				$uibModalInstance.close(data);
 			});
 		} else {
 			$http({
@@ -352,8 +358,8 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 					'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 				}
 			}).
-			success(function(){
-				$uibModalInstance.close($scope.regra);
+			success(function(data){
+				$uibModalInstance.close(data);
 			});
 		}
 	}

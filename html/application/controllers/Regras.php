@@ -50,17 +50,21 @@ class Regras extends CI_Controller {
 	public function edita_regra($admin_id, $grupo_regra_id = 1) {
 		$regra = (array) json_decode($this->input->post('object'));
 		
-		$this->RegrasModel->editRegra($regra['id'], $regra['descricao'], $regra['destino'], $regra['proto'], $regra['servico'], $admin_id, $grupo_regra_id);
+		$data = array();
 		
-		$data = array(
-				'regra_id' => $regra['id'],
-				'descricao' => urldecode($regra['descricao']),
-				'destino' => $regra['destino'],
-				'proto' => $regra['proto'],
-				'servico' => $regra['servico'],
-				'admin_id' => $admin_id,
-				'grupo_regra_id' => $grupo_regra_id
-		);
+		if ($this->RegrasModel->editRegra($regra['id'], $regra['descricao'], $regra['destino'], $regra['proto'], $regra['servico'], $admin_id, $grupo_regra_id)) {
+			$data = array(
+					'cod' => 0,
+					'regra_id' => $regra['id'],
+					'descricao' => urldecode($regra['descricao']),
+					'destino' => $regra['destino'],
+					'proto' => $regra['proto'],
+					'servico' => $regra['servico'],
+					'admin_id' => $admin_id,
+					'grupo_regra_id' => $grupo_regra_id
+			);
+		} else
+			$data = array('cod' => 1, 'msg' => 'Falha de edição. Verifique duplicidade');
 		
 		$this->output->set_content_type('application/json')->set_output( indent_json(json_encode($data)) );
 	}

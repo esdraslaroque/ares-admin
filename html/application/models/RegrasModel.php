@@ -88,6 +88,17 @@ class RegrasModel extends CI_Model {
 	}
 
 	public function editRegra($regra_id, $descricao, $destino, $proto, $servico, $admin_id, $grupo_regra_id = NULL) {
+		/* Verificando UNIQUE KEYs */
+		$this->db->select('id');
+		$this->db->from('regra');
+		$this->db->where('destino', $destino);
+		$this->db->where('proto', $proto);
+		$this->db->where('servico', $servico);
+		$query = $this->db->get();
+		
+		if ($query->num_rows() > 0)
+				return FALSE;
+
 		$data = array(
 				'descricao' => urldecode($descricao),
 				'destino' => urldecode($destino),
@@ -99,5 +110,10 @@ class RegrasModel extends CI_Model {
 	
 		$this->db->where('id', $regra_id);
 		$this->db->update('regra', $data);
+		
+		if ($this->db->affected_rows() < 1)
+			return FALSE;
+		
+		return TRUE;
 	}
 }
