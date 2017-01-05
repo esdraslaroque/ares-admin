@@ -12,7 +12,8 @@ app.config(['ngToastProvider', function(ngToastProvider) {
 app.controller('ConfigsCtrl', function($scope, $http, ngToast){
 	
 	$scope.conf;
-	$scope.msg;
+	$scope.msg = '';
+	$scope.tipos = [{name: 'Novo ARES', value: 1},{name: 'Renovação de Chave', value: 2},{name: 'Reenvio de Kit', value: 3}];
 	
 	$http.get('/app/configs/all').
 		success(function(data){
@@ -20,20 +21,14 @@ app.controller('ConfigsCtrl', function($scope, $http, ngToast){
 		}).
 		error(function(){ feedback('danger','Falha ao carregar configurações') });
 	
-	$scope.setMsg = function (tipo) {
-		alert('lalalallal');
-		if (! tipo)
-			$scope.msg = false;
-		
+	$scope.setMensagem = function (tipo) {
 		if (tipo == 1)
 			$scope.msg = $scope.conf.email_mensagem_novo;
-		else if (tipo == 2)
+		if (tipo == 2)
 			$scope.msg = $scope.conf.email_mensagem_renovacao;
-		else if (tipo == 3)
-			return $scope.conf.email_mensagem_kit;
-		else
-			$scope.msg = false;
-	};
+		if (tipo == 3)
+			$scope.msg = $scope.conf.email_mensagem_kit;
+	}
 	
 	feedback = function (type, msg) {
 		ngToast.create({

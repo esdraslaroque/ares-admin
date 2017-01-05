@@ -56,10 +56,13 @@
 				<div class="form-group">
 					<p class="control-label col-sm-1">Tipo:</p>
 					<div class="col-sm-3">
-						<select class="form-control">
-							<option ng-model="tipo" value="1" ng-click="setMsg()">Novo ARES</option>
-							<option ng-model="tipo" value="2" ng-click="setMsg()">Renovação de Chave</option>
-							<option ng-model="tipo" value="3" ng-click="setMsg()">Reenvio de Kit</option>
+<!-- 						<select class="form-control"> -->
+<!-- 							<option ng-model="tipo" value="1" ng-click="setMsg()">Novo ARES</option> -->
+<!-- 							<option ng-model="tipo" value="2" ng-click="setMsg()">Renovação de Chave</option> -->
+<!-- 							<option ng-model="tipo" value="3" ng-click="setMsg()">Reenvio de Kit</option> -->
+<!-- 						</select> -->
+						<select class="form-control" ng-model="tipoSel" ng-change="setMensagem(tipoSel)" data-ng-options="tipo.value as tipo.name for tipo in tipos">
+							<option value="">Selecione ..</option>
 						</select>
 					</div>
 				</div>
@@ -67,6 +70,7 @@
 					<p class="control-label col-sm-1">Mensagem:</p>
 					<div class="col-sm-5">
 						<textarea rows="10" class="form-control">{{ msg }}</textarea>
+<!-- 						<textarea rows="10" class="form-control">{{ tipoSel }}</textarea> -->
 						<br />
 						<button type="submit"  class="btn btn-primary">Salvar</button>
 					</div>
