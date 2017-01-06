@@ -66,6 +66,12 @@
 					<div class="col-sm-5">
 						<textarea rows="10" ng-model="msg.text" class="form-control"></textarea>
 						<br />
+						<p><b>Macros disponíveis para mensagem:</b><br />
+						
+						<code ng-non-bindable>{{login}}</code> -> Login de rede do usuário<br />
+						<code ng-non-bindable>{{validade}}</code> -> Data de validade da chave (dd/mm/YYY)
+						</p>
+						<br />
 						<button type="submit"  class="btn btn-primary" ng-click="save('email')">Salvar</button>
 					</div>
 				</div>
