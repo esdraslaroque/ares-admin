@@ -21,4 +21,16 @@ class ConfigsModel extends CI_Model {
 		return $query->row()->valor;
 	}
 	
+	public function setConfig($chave, $valor) {
+		$data = array( 'valor' => $valor);
+		
+		$this->db->where('chave', $chave);
+		$this->db->update('config', $data);
+		
+		if ($this->db->affected_rows() < 1)
+			return FALSE;
+		
+		return TRUE; 
+	}
+	
 }

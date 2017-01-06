@@ -210,8 +210,10 @@ function($scope, $http, $rootScope, $uibModal, $interval, $log, ngToast){
 		var user = person;
 		$http.get('/app/usuarios/gera_kit/'+user.login+'/true').
 			success(function(data){
-				if (data.cod == 1)
+				if (data.cod == 1) {
 					feedback('info', data.msg);
+					feedback('success', 'Chave enviada via e-mail');
+				}
 				else if (data.cod == 0)
 					feedback('success', data.msg);
 			});

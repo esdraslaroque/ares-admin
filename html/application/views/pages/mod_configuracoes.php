@@ -31,7 +31,7 @@
 					<div class="col-sm-3">
 						<input type="text" ng-model="conf.ad_port" class="form-control">
 						<br />
-						<button type="submit" class="btn btn-primary">Salvar</button>
+						<button type="submit" class="btn btn-primary" ng-click="save('ad')">Salvar</button>
 					</div>
 				</div>
 			</form>
@@ -64,9 +64,9 @@
 				<div class="form-group">
 					<p class="control-label col-sm-1">Mensagem:</p>
 					<div class="col-sm-5">
-						<textarea rows="10" class="form-control">{{ msg }}</textarea>
+						<textarea rows="10" ng-model="msg.text" class="form-control"></textarea>
 						<br />
-						<button type="submit"  class="btn btn-primary">Salvar</button>
+						<button type="submit"  class="btn btn-primary" ng-click="save('email')">Salvar</button>
 					</div>
 				</div>
 			</form>

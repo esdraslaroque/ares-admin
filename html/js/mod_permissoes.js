@@ -296,7 +296,7 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 				}
 			}).
 			success(function(data){
-				$scope.regra = data
+				$scope.regra = data;
 				$uibModalInstance.close($scope.regra);
 			});
 		} else {
@@ -309,7 +309,7 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 				}
 			}).
 			success(function(data){
-				$scope.regra = data
+				$scope.regra = data;
 				$uibModalInstance.close($scope.regra);
 			});
 		}

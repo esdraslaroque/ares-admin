@@ -149,4 +149,49 @@ class Configs extends CI_Controller {
 			exit ('Periodo nao previsto');
 		
 	}
+
+	public function set($conf) {
+		if (! $this->session->admin_username)
+			redirect(base_url('/app/admin'));
+		
+		if ($this->session->admin_perfil != 1)
+			show_error('Access Denied');
+		
+		$config = (array) json_decode($this->input->post('object'));
+		
+		$ret = FALSE;
+		$data = array('cod' => 0, 'msg' => 'Configurações de '.strtoupper($conf).' gravadas');
+		
+		if ($conf == 'ad') {
+			$ret = $this->ConfigsModel->setConfig('ad_user', $config['ad_user']);
+			$ret = $this->ConfigsModel->setConfig('ad_pass', $config['ad_pass']);
+			$ret = $this->ConfigsModel->setConfig('ad_server', $config['ad_server']);
+			$ret = $this->ConfigsModel->setConfig('ad_port', $config['ad_port']);
+		}
+		
+		if ($conf == 'email') {
+			$ret = $this->ConfigsModel->setConfig('email_smtp', $config['email_smtp']);
+			$ret = $this->ConfigsModel->setConfig('email_remetente', $config['email_remetente']);
+			
+			switch ($config['tipo']) {
+				case 1:
+					$ret = $this->ConfigsModel->setConfig('email_mensagem_novo', $config['msg']);
+					break;
+				
+				case 2:
+					$ret = $this->ConfigsModel->setConfig('email_mensagem_renovacao', $config['msg']);
+					break;
+				
+				case 3:
+					$ret = $this->ConfigsModel->setConfig('email_mensagem_kit', $config['msg']);
+					break;
+			}
+		}
+		
+		if (! $ret)
+			$data = array('cod' => 1, 'msg' => 'Uma ou mais campos falharam');
+		
+		$this->output->set_content_type('application/json')->set_output( indent_json(json_encode($data)) );
+	}
+	
 }
