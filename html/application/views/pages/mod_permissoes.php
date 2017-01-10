@@ -147,7 +147,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="email">Serviço:</label>
 				<div class="col-sm-8">          
-					<input type="number" min="1" max="65535" class="form-control" ng-model="newrule.servico" placeholder="Porta do serviço..">
+					<input type="text" class="form-control" ng-model="newrule.servico" placeholder="Porta do serviço..">
 				</div>
 			</div>
 
@@ -235,7 +235,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="email">Serviço:</label>
 				<div class="col-sm-8">          
-					<input type="number" min="1" max="65535" class="form-control" ng-model="regra.servico" placeholder="Porta do serviço..">
+					<input type="text" class="form-control" ng-model="regra.servico" placeholder="Porta do serviço..">
 				</div>
 			</div>
 
