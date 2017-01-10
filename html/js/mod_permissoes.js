@@ -161,9 +161,11 @@ app.controller('RegrasCtrl', function($scope, $http, $rootScope, $uibModal, ngTo
 		});
 		
 		modalInstance.result.then(function(regra){
-			$scope.newrule = regra;
-			$scope.regras.push($scope.newrule);
-			feedback('success','Regra <b>'+regra.descricao+'</b> adicionada');
+			if (regra) {
+				$scope.newrule = regra;
+				$scope.regras.push($scope.newrule);
+				feedback('success','Regra <b>'+regra.descricao+'</b> adicionada');
+			}
 		});
 	} // createRule
 
@@ -298,6 +300,10 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 			success(function(data){
 				$scope.regra = data;
 				$uibModalInstance.close($scope.regra);
+			}).
+			error(function(){
+				$uibModalInstance.close();
+				feedback('danger', 'Falha na gravação. Verifique duplicidade');
 			});
 		} else {
 			$http({
@@ -311,6 +317,10 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 			success(function(data){
 				$scope.regra = data;
 				$uibModalInstance.close($scope.regra);
+			}).
+			error(function(){
+				$uibModalInstance.close();
+				feedback('danger', 'Falha na gravação. Verifique duplicidade');
 			});
 		}
 	}
@@ -348,6 +358,10 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 			}).
 			success(function(data){
 				$uibModalInstance.close(data);
+			}).
+			error(function(){
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
+				$uibModalInstance.close(e);
 			});
 		} else {
 			$http({
@@ -360,6 +374,10 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 			}).
 			success(function(data){
 				$uibModalInstance.close(data);
+			}).
+			error(function(){
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
+				$uibModalInstance.close(e);
 			});
 		}
 	}
