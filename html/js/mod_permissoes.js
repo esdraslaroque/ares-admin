@@ -303,7 +303,7 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 			}).
 			error(function(){
 				$uibModalInstance.close();
-				feedback('danger', 'Falha na gravação. Verifique duplicidade');
+				feedback('danger', 'Falha na gravação. Verifique duplicidade ou formatos de campos');
 			});
 		} else {
 			$http({
@@ -320,7 +320,7 @@ app.controller('CrtRuleCtrl', function($scope, $uibModalInstance, $http, tab, gr
 			}).
 			error(function(){
 				$uibModalInstance.close();
-				feedback('danger', 'Falha na gravação. Verifique duplicidade');
+				feedback('danger', 'Falha na gravação. Verifique duplicidade ou formatos de campos');
 			});
 		}
 	}
@@ -360,7 +360,7 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 				$uibModalInstance.close(data);
 			}).
 			error(function(){
-				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade ou formatos de campos'};
 				$uibModalInstance.close(e);
 			});
 		} else {
@@ -376,7 +376,7 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 				$uibModalInstance.close(data);
 			}).
 			error(function(){
-				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade ou formatos de campos'};
 				$uibModalInstance.close(e);
 			});
 		}
