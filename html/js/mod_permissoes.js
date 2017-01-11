@@ -360,7 +360,7 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 				$uibModalInstance.close(data);
 			}).
 			error(function(){
-				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade ou formatos de campos'};
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
 				$uibModalInstance.close(e);
 			});
 		} else {
@@ -376,7 +376,7 @@ app.controller('EdtRuleCtrl', function($scope, $uibModalInstance, $http, regra, 
 				$uibModalInstance.close(data);
 			}).
 			error(function(){
-				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade ou formatos de campos'};
+				var e = {cod: 1, msg: 'Falha de gravação. Verifique duplicidade'};
 				$uibModalInstance.close(e);
 			});
 		}
