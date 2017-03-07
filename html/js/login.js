@@ -5,15 +5,15 @@ $(document).ready(function() {
   $('#submit').click(function(){
 	  if ($('.file').val().length < 1) {
 		  $('#feedback p').attr('class','error').text('Selecione uma chave ARES');
-		  $('#feedback').show().fadeOut(8000);
+		  $('#feedback').show().fadeOut(12000);
 		  
 	  } else if ($('.code').val().length < 1) {
 		  $('#feedback p').attr('class','error').text('Número de acesso não informado');
-		  $('#feedback').show().fadeOut(8000);
+		  $('#feedback').show().fadeOut(12000);
 		  
 	  } else if (! fileValidate ( $('.file').val() )) {
 			$('#feedback p').attr('class','error').text('Chave inválida! Selecione um arquivo .pub');
-			$('#feedback').show().fadeOut(8000);
+			$('#feedback').show().fadeOut(12000);
 			$('.file').val('').focus();
 	  } else
 		  codeValidate( $('.code').val() );
@@ -24,7 +24,7 @@ $(document).ready(function() {
            type: 'GET',
            url: '/app/autenticador/codeValidate/'+cCode,
 	   cache: false,
-	   timeout: 8000,
+	   timeout: 15000,
            beforeSend: function() { 
 			  $('#feedback p').attr('class','info').text('Validando número de acesso..');
 			  $('#feedback').show();
@@ -35,7 +35,7 @@ $(document).ready(function() {
 			   $('form').submit();
 		   else {
 	        	$('#feedback p').attr('class','error').text('Número de acesso incorreto. Tente novamente!');
-				$('#feedback').show().fadeOut(8000);
+				$('#feedback').show().fadeOut(12000);
 				$('.code').val('').focus();
 				$('#box img').attr('src','/app/autenticador/randomImage');
 		   }

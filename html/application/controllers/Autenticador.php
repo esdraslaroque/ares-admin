@@ -54,16 +54,6 @@ class Autenticador extends CI_Controller {
 		}
 	}
 	
-// 	public function uploadKeyBkp() {
-// 		$uploaddir = '/tmp/';
-// 		$uploadfile = $uploaddir . basename($_FILES['cChave']['name']);
-		
-// 		if (move_uploaded_file($_FILES['cChave']['tmp_name'], $uploadfile))
-// 			echo basename($_FILES['cChave']['name']);
-// 		else
-// 			echo 1;
-// 	}
-	
 	public function uploadKey() {
 		if ($_FILES['cChave']['size'] > 1030) {
 			echo 2;
@@ -79,17 +69,6 @@ class Autenticador extends CI_Controller {
 		else
 			echo 1;
 	}
-	
-// 	public function showRulesBk($login = NULL) {
-// 		if (empty($login))
-// 			show_error('Parameter Needed');
-		
-// 		$this->load->model('AresModel');
-
-// 		$rules = $this->AresModel->getRulesByLogin($login);
-		
-// 		$this->output->set_content_type('application/json')->set_output('{"data": '. json_encode($rules) .'}');
-// 	}
 	
 	public function showRules($login = NULL) {
 		if (empty($login))
