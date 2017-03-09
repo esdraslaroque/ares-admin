@@ -44,7 +44,8 @@
 				<a ng-if="admin.perfil == 2 || admin.perfil == 3" class="icon" uib-tooltip="Mais informações"><i class="glyphicon glyphicon-info-sign" ng-click="editUser(person)"></i></a>
 				<a ng-if="admin.perfil == 1" class="icon" uib-tooltip="{{person.ativo == 1 && 'Desabilitar Usuário' || 'Habilitar Usuário'}}" ng-click="ativaUser(person)"><i ng-class="{'glyphicon glyphicon-ok text-success': person.ativo == 0, 'glyphicon glyphicon-remove text-danger': person.ativo == 1}"></i></a>
 				<a ng-if="admin.perfil == 1 || admin.perfil == 2" class="icon" uib-tooltip="Renovar Chave"><i class="glyphicon icon-key" ng-click="renewKey(person)"></i></a>
-				<a ng-if="admin.perfil == 1 || admin.perfil == 2" class="icon" uib-tooltip="Gerar Kit ARES"><i class="glyphicon glyphicon-compressed" ng-click="genKit(person)"></i></a>
+				<!-- <a ng-if="admin.perfil == 1 || admin.perfil == 2" class="icon" uib-tooltip="Gerar Kit ARES"><i class="glyphicon glyphicon-compressed" ng-click="genKit(person)"></i></a>  -->
+				<a class="icon" uib-tooltip="Gerar Kit ARES"><i class="glyphicon glyphicon-compressed" ng-click="genKit(person)"></i></a>				
 				<a ng-if="admin.perfil == 1" class="icon" uib-tooltip="Editar Usuário"><i class="glyphicon glyphicon-pencil" ng-click="editUser(person)"></i></a>
 				<a ng-if="admin.perfil == 1" class="icon" uib-tooltip="Excluir Usuário"><i class="glyphicon glyphicon-trash" ng-click="confirmDel(person)"></i></a>
 			</td>
