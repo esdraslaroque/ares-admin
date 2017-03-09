@@ -67,8 +67,8 @@ class Usuarios extends CI_Controller {
 				$this->sendmail($login, 2);
 	
 				/* Temporario Para periodo de migração do x-oc-ipsec */
-				$this->gera_kit($login);
-				$this->output->set_content_type('application/json')->set_output( $output );
+// 				$this->gera_kit($login);
+// 				$this->output->set_content_type('application/json')->set_output( $output );
 			}
 		} 
 	}
@@ -95,8 +95,8 @@ class Usuarios extends CI_Controller {
 	}
 	
 	public function gera_kit($login = NULL, $mail = FALSE) {
-		if ($this->session->admin_perfil == 3)
-			show_error('Access Denied');
+// 		if ($this->session->admin_perfil == 3)
+// 			show_error('Access Denied');
 		
 		if (empty($login))
 			show_error('Parameters Needed');
