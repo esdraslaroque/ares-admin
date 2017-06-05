@@ -39,7 +39,7 @@
 			<td>{{ formatSizeUnits(acesso.trafego) }}</td>
 			<td>{{acesso.ult_acesso}}</td>
 			<td>
-				<a href="#" uib-tooltip="Mais informações" ng-click="carregaRelByLogin(acesso);"><i ng-class="{'glyphicon glyphicon-chevron-up text-danger': !acesso.isopen, 'glyphicon glyphicon-chevron-down': acesso.isopen}"></i></a>
+				<a href="#" uib-tooltip="Detalhes" ng-click="carregaRelByLogin(acesso);"><i ng-class="{'glyphicon glyphicon-chevron-up text-danger': !acesso.isopen, 'glyphicon glyphicon-chevron-down': acesso.isopen}"></i></a>
 			</td>
 		</tr>
 		<tr uib-collapse="acesso.isopen" ng-repeat-end style="background-color: #f5f5f5">
