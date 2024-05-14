@@ -1,9 +1,9 @@
 <?php
 class LdapAdModel extends CI_Model {
 	
-	private $ad_user = 'fencecluster@sefa.pa.gov.br';
-	private $ad_pass = '2t6XSHLecuHQdYA4';
-	private $ad_host = '10.3.1.24';
+	private $ad_user = '${USER_LDAP}';
+	private $ad_pass = '${PASS_LDAP}';
+	private $ad_host = '${IP_LDAP}';
 	private $ad_port = '389';
 	private $ad_basedn = 'DC=sefa,DC=pa,DC=gov,DC=br'; 
 	private $ad_connector;
